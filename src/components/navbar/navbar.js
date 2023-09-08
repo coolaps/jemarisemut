@@ -20,6 +20,16 @@ const menuItem = [
     status: 'link'
   },
   {
+    name: 'Product',
+    link: '/#product',
+    status: 'link'
+  },
+  {
+    name: 'Customers',
+    link: '/#customers',
+    status: 'link'
+  },
+  {
     name: 'Pricing',
     link: '/#pricing',
     status: 'link'
@@ -78,17 +88,17 @@ const Navbar = ({ isTransparentWhenTop = true }) => {
           >
             <div className='transition duration-300 ease-in-out flex justify-start items-center'>
               <Image src={LogoJemariSemut} className='transition duration-300 ease-in-out drop-shadow-lg w-[50px] md:w-[60px]' alt='Logo Jemari Semut'/>
-              <div className='transition duration-300 ease-in-out font-bold ml-1 text-2xl md:text-3xl'>Jemari Semut</div>
+              <div className='transition duration-300 ease-in-out font-bold ml-1 text-2xl md:text-3xl'>Jemari <span className='text-[#FECC52]'>Semut</span></div>
             </div>
           </a>
 
           {/* menu */}
-          <div className='hidden md:flex flex-wrap justify-between w-[300px]'>
+          <div className='hidden md:flex flex-wrap justify-between w-[500px]'>
             {
               menuItem.map((res, index) => {
                 return (
                   res.status === 'link' &&
-                    <a href={res.link} key={res.name+index+'linkwhenup'} className={`pb-1 transition duration-300 ease-in-out text-base hover:cursor-pointer hover:text-zinc-300 border-y-2 border-b-transparent border-t-transparent hover:border-b-zinc-300`}>{res.name}</a>
+                    <a href={res.link} key={res.name+index+'linkwhenup'} className={`pb-1 transition duration-300 ease-in-out text-base hover:cursor-pointer hover:text-blue-950 border-y-2 border-b-transparent border-t-transparent hover:border-b-blue-950`}>{res.name}</a>
                 )
               })
             }

@@ -4,6 +4,10 @@
     font-family: 'Poppins' !important;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

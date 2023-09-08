@@ -1,0 +1,12 @@
+.bg-home {
+    background-image: url("../assets/bg2.png"), url("../assets/bg1.png");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 30%;
+    background-position: 100% 0px, 0 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .bg-home {
+        background-size: 59%;
+    }
+}
