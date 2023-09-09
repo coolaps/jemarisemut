@@ -10,10 +10,7 @@ export default function Home() {
       <Navbar/>
 
       {/* section home */}
-      <div id="home" className="relative pt-[80px] pb-[80px] text-zinc-600">
-        <div className="w-[100%] h-[100%] absolute top-0 left-0">
-          <ParticlesComponent/>
-        </div>
+      <div id="home" className="pt-[80px] pb-[80px] text-zinc-600">
         <div className="max-w-4xl flex justify-evenly items-center m-auto flex-wrap flex-col mt-[50px]">
           <div className="px-3 py-2 bg-biru-100 font-semibold capitalize rounded-full">PARTNER TERPERCAYA</div>
 
@@ -33,6 +30,8 @@ export default function Home() {
       </div>
 
       <div className="h-[1000px]"></div>
+
+      <ParticlesComponent/>
     </>
   )
 }
