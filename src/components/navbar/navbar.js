@@ -20,18 +20,13 @@ const menuItem = [
     status: 'link'
   },
   {
-    name: 'Product',
-    link: '/#product',
+    name: 'Pricing',
+    link: '/#pricing',
     status: 'link'
   },
   {
     name: 'Customers',
     link: '/#customers',
-    status: 'link'
-  },
-  {
-    name: 'Pricing',
-    link: '/#pricing',
     status: 'link'
   }
 ]

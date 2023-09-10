@@ -9,6 +9,7 @@ import { HandClick, Tool, DeviceMobileMessage, Hearts } from 'tabler-icons-react
 import Footer from "@/components/footer/footer";
 import Image from "next/image";
 import numberSeparator from "@/utils/numberSeparator";
+import WhatsappButton from "@/components/wabutton/WhatsappButton";
 
 // item scrapeframe
 const itemsScrapeFrame = [
@@ -28,6 +29,38 @@ const itemsScrapeFrame = [
   },
 ]
 
+// item simple art
+const itemsSimpleArt = [
+  {
+    name: 'Close Up',
+    image: 'https://placehold.co/600x400.png',
+    price: [20000, 30000, 50000, 55000, 60000],
+    list: ['File', 'Cetak', 'Cetak 6R + Pigora', 'Cetak 8R + Pigora', 'Cetak 10R + Pigora'],
+    message: 'Hy Admin saya mau pesan Simple Art'
+  },
+  {
+    name: 'Half Body',
+    image: 'https://placehold.co/600x400.png',
+    price: [25000, 35000, 55000, 60000, 65000],
+    list: ['File', 'Cetak', 'Cetak 6R + Pigora', 'Cetak 8R + Pigora', 'Cetak 10R + Pigora'],
+    message: 'Hy Admin saya mau pesan Simple Art'
+  },
+  {
+    name: 'Full Body',
+    image: 'https://placehold.co/600x400.png',
+    price: [30000, 40000, 60000, 65000, 70000],
+    list: ['File', 'Cetak', 'Cetak 6R + Pigora', 'Cetak 8R + Pigora', 'Cetak 10R + Pigora'],
+    message: 'Hy Admin saya mau pesan Simple Art'
+  },
+  {
+    name: 'Couple',
+    image: 'https://placehold.co/600x400.png',
+    price: [40000, 50000, 70000, 75000, 80000],
+    list: ['File', 'Cetak', 'Cetak 6R + Pigora', 'Cetak 8R + Pigora', 'Cetak 10R + Pigora'],
+    message: 'Hy Admin saya mau pesan Simple Art'
+  },
+]
+
 export default function Home() {
   return (
     <>
@@ -42,7 +75,13 @@ export default function Home() {
 
           <div className="mt-8 text-center text-xl"><span className="font-semibold">Jemari Semut</span> Penyedia jasa pembuatan Scrapeframe dan Simple Art Terpercaya</div>
 
-          <div className="mt-8 transition duration-300 ease-in-out bg-hijau-200 hover:bg-zinc-500 hover:text-white font-semibold px-3 py-2 rounded-full border-2 border-zinc-900 hover:border-zinc-200 cursor-pointer">Pesan Sekarang</div>
+          <a 
+            href={`https://wa.me/6281932622630?text=Hi Admin saya mau bertanya`}
+            target='_blank'
+            className="mt-8 transition duration-300 ease-in-out bg-hijau-200 hover:bg-zinc-500 hover:text-white font-semibold px-3 py-2 rounded-full border-2 border-zinc-900 hover:border-zinc-200 cursor-pointer"
+          >
+            Pesan Sekarang
+          </a>
         </div>
       </div>
 
@@ -118,12 +157,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* section product */}
-      <div id="product" className="pt-[80px] pb-[80px] text-zinc-600 ">
+      {/* section pricing */}
+      <div id="pricing" className="pt-[80px] pb-[80px] text-zinc-600 ">
         <div className="max-w-4xl mt-[50px] m-auto">
           <div className="flex justify-center flex-col items-center">
             {/* title */}
-            <div className="px-3 py-2 bg-hijau-100 text-zinc-800 font-semibold rounded-full w-fit">PRODUCT</div>
+            <div className="px-3 py-2 bg-hijau-100 text-zinc-800 font-semibold rounded-full w-fit">PRICING</div>
             <div className="mt-2 text-zinc-600 text-3xl font-semibold max-w-[600px] text-center">
               Produk Scrapeframe dan Simple Art Jemari <span className="text-orange-300">Semut</span>
             </div>
@@ -146,10 +185,58 @@ export default function Home() {
                       <div className="text-justify font-light">{res.text}</div>
                     </div>
 
-                    <div className="bg-hijau-200 text-zinc-800 cursor-pointer px-2 py-1 my-2 w-fit rounded-lg">Pesan</div>
+                    <a 
+                      href={`https://wa.me/6281932622630?text=${res.message}`}
+                      target='_blank' 
+                      className="transition duration-300 ease-in-out bg-hijau-200 hover:bg-biru-100 text-zinc-800 cursor-pointer px-2 py-1 my-2 w-fit rounded-lg"
+                    >
+                      Pesan
+                    </a>
 
                     {/* harga */}
                     <div className="absolute top-0 right-0 bg-merah-200 px-1 rounded-tr-lg rounded-bl-lg text-white">Rp. {numberSeparator(res.price)}</div>
+                  </div>
+                )
+              }
+            </div>
+          </div>
+
+          <br/>
+
+          {/* simple art */}
+          <div className="mt-4">
+            <div className="font-semibold text-lg ml-2">Simple Art :</div>
+
+            {/* card */}
+            <div className="flex justify-center md:justify-start items-center flex-wrap">
+              {
+                itemsSimpleArt.map((res, index) => 
+                  <div key={index + 'scrapeframe'} className="relative bg-white shadow-sm shadow-black p-2 m-2 rounded-lg w-[90%] md:w-[280px] h-[390px] flex justify-between flex-col">
+                    <div>
+                      <Image width={400} height={400} src={res.image} alt={res.name}/>
+
+                      <div className="mt-1 font-semibold text-lg">{res.name}</div>
+
+                      {
+                        res.list.map((resList, indexList) => 
+                          <div key={indexList+resList} className="flex justify-between">
+                            <div>{resList}</div>
+                            <div className="font-semibold">Rp. {numberSeparator(res.price[indexList])}</div>
+                          </div>
+                        )
+                      }
+                    </div>
+
+                    <a 
+                      href={`https://wa.me/6281932622630?text=${res.message} ${res.name}`}
+                      target='_blank' 
+                      className="transition duration-300 ease-in-out bg-hijau-200 hover:bg-biru-100 text-zinc-800 cursor-pointer px-2 py-1 my-2 w-fit rounded-lg"
+                    >
+                      Pesan
+                    </a>
+
+                    {/* harga */}
+                    <div className="absolute top-0 right-0 bg-merah-200 px-1 rounded-tr-lg rounded-bl-lg text-white">Rp. {numberSeparator(res.price[0])} - {numberSeparator(res.price[res.price.length-1])}</div>
                   </div>
                 )
               }
@@ -165,15 +252,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* section pricing */}
-      <div id="pricing" className="pt-[80px] pb-[80px] text-zinc-600 bg-ungu-100">
-        <div className="max-w-4xl flex justify-center m-auto mt-[50px]">
-          pricing
-        </div>
-      </div>
-
       {/* footer */}
       <Footer/>
+
+      {/* whatsapp button */}
+      <WhatsappButton/>
 
       <ParticlesComponent/>
     </>
