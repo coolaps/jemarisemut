@@ -176,9 +176,11 @@ export default function Home() {
             <div className="flex justify-center md:justify-start items-center flex-wrap">
               {
                 itemsScrapeFrame.map((res, index) => 
-                  <div key={index + 'scrapeframe'} className="relative bg-white shadow-sm shadow-black p-2 m-2 rounded-lg w-[90%] md:w-[280px] h-[350px] flex justify-between flex-col">
+                  <div key={index + 'scrapeframe'} className="relative bg-white shadow-sm shadow-black p-2 m-2 rounded-lg w-[90%] md:w-[280px] min-h-[350px] flex justify-between flex-col">
                     <div>
-                      <Image width={400} height={400} src={res.image} alt={res.name}/>
+                      <div className="flex justify-center">
+                        <Image width={400} height={400} src={res.image} alt={res.name}/>
+                      </div>
 
                       <div className="mt-1 font-semibold text-base">{res.name}</div>
 
@@ -211,9 +213,11 @@ export default function Home() {
             <div className="flex justify-center md:justify-start items-center flex-wrap">
               {
                 itemsSimpleArt.map((res, index) => 
-                  <div key={index + 'scrapeframe'} className="relative bg-white shadow-sm shadow-black p-2 m-2 rounded-lg w-[90%] md:w-[280px] h-[390px] flex justify-between flex-col">
+                  <div key={index + 'scrapeframe'} className="relative bg-white shadow-sm shadow-black p-2 m-2 rounded-lg w-[90%] md:w-[280px] min-h-[390px] flex justify-between flex-col">
                     <div>
-                      <Image width={400} height={400} src={res.image} alt={res.name}/>
+                      <div className="flex justify-center">
+                        <Image width={400} height={400} src={res.image} alt={res.name}/>
+                      </div>
 
                       <div className="mt-1 font-semibold text-lg">{res.name}</div>
 
