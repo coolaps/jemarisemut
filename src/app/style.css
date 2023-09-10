@@ -5,6 +5,28 @@
     background-position: 100% 0px, 0 100%;
 }
 
+.sliderEffect{
+    height: 1950px;
+    animation: scroll 30s linear infinite;
+}
+
+.sliderEffect:hover{
+    animation-play-state: paused;
+}
+
+.animateScroll{
+    display: none;
+}
+
+@keyframes scroll {
+  0%{
+      transform: translateZ(0);
+  }
+  100%{
+      transform: translate3d(0,-975px,0);
+  }
+}
+
 @media only screen and (max-width: 600px) {
     .bg-home {
         background-size: 59%;

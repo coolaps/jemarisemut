@@ -11,18 +11,37 @@ import Image from "next/image";
 import numberSeparator from "@/utils/numberSeparator";
 import WhatsappButton from "@/components/wabutton/WhatsappButton";
 
+// gambar scrapeframe
+import scarepeFrame1 from '../assets/image/scrapeframe/s_1.jpg'
+import scarepeFrame2 from '../assets/image/scrapeframe/s_2.jpg'
+import scarepeFrame3 from '../assets/image/scrapeframe/s_3.jpg'
+import scarepeFrame4 from '../assets/image/scrapeframe/s_4.jpg'
+import scarepeFrame5 from '../assets/image/scrapeframe/s_5.jpg'
+import scarepeFrameTemplate from '../assets/image/scrapeframe/template.jpg'
+
+// gambar simple art
+import simpleArt1 from '../assets/image/simple_art/s_1.jpg'
+import simpleArt2 from '../assets/image/simple_art/s_2.jpg'
+import simpleArt3 from '../assets/image/simple_art/s_3.jpg'
+import simpleArt4 from '../assets/image/simple_art/s_4.jpg'
+import simpleArt5 from '../assets/image/simple_art/s_5.jpg'
+import closeUp from '../assets/image/simple_art/close_up.jpg'
+import couple from '../assets/image/simple_art/couple.jpg'
+import full_body from '../assets/image/simple_art/full_body.jpg'
+import half_body from '../assets/image/simple_art/half_body.jpg'
+
 // item scrapeframe
 const itemsScrapeFrame = [
   {
     name: 'Desain By Template',
-    image: 'https://placehold.co/600x400.png',
+    image: scarepeFrameTemplate,
     price: 85000,
     text: 'Pesan Scrapeframe dengan template yang sudah kami sediakan',
     message: 'Hy Admin saya mau pesan scrapeframe dengan Desain Template'
   },
   {
     name: 'Desain By Request',
-    image: 'https://placehold.co/600x400.png',
+    image: scarepeFrame1,
     price: 100000,
     text: 'Pesan Scrapeframe dengan desain custom',
     message: 'Hy Admin saya mau pesan scrapeframe dengan Desain Request'
@@ -33,31 +52,59 @@ const itemsScrapeFrame = [
 const itemsSimpleArt = [
   {
     name: 'Close Up',
-    image: 'https://placehold.co/600x400.png',
+    image: closeUp,
     price: [20000, 30000, 50000, 55000, 60000],
     list: ['File', 'Cetak', 'Cetak 6R + Pigora', 'Cetak 8R + Pigora', 'Cetak 10R + Pigora'],
     message: 'Hy Admin saya mau pesan Simple Art'
   },
   {
     name: 'Half Body',
-    image: 'https://placehold.co/600x400.png',
+    image: half_body,
     price: [25000, 35000, 55000, 60000, 65000],
     list: ['File', 'Cetak', 'Cetak 6R + Pigora', 'Cetak 8R + Pigora', 'Cetak 10R + Pigora'],
     message: 'Hy Admin saya mau pesan Simple Art'
   },
   {
     name: 'Full Body',
-    image: 'https://placehold.co/600x400.png',
+    image: full_body,
     price: [30000, 40000, 60000, 65000, 70000],
     list: ['File', 'Cetak', 'Cetak 6R + Pigora', 'Cetak 8R + Pigora', 'Cetak 10R + Pigora'],
     message: 'Hy Admin saya mau pesan Simple Art'
   },
   {
     name: 'Couple',
-    image: 'https://placehold.co/600x400.png',
+    image: couple,
     price: [40000, 50000, 70000, 75000, 80000],
     list: ['File', 'Cetak', 'Cetak 6R + Pigora', 'Cetak 8R + Pigora', 'Cetak 10R + Pigora'],
     message: 'Hy Admin saya mau pesan Simple Art'
+  },
+]
+
+// item slider product
+const dataTipe = [
+  {
+      name: '',
+      link: scarepeFrame1
+  },
+  {
+      name: '',
+      link: scarepeFrame2
+  },
+  {
+      name: '',
+      link: scarepeFrame3
+  },
+  {
+      name: '',
+      link: simpleArt1
+  },
+  {
+      name: '',
+      link: simpleArt2
+  },
+  {
+      name: '',
+      link: simpleArt3
   },
 ]
 
@@ -157,8 +204,62 @@ export default function Home() {
         </div>
       </div>
 
+      {/* section product */} 
+      <div id="product" className="pt-[80px] pb-[80px] text-zinc-600 overflow-hidden">
+        <div className="flex flex-col w-full items-center max-w-5xl mx-auto lg:items-center lg:flex-row-reverse">
+          <div className='w-[80%] sm:w-[60%] mb-[10px] mt-[20px] lg:w-[33.3%] lg:mt-[10rem] lg:mb-[20rem] lg:ml-[2rem]'>
+            <div className="px-3 py-2 bg-hijau-100 text-zinc-800 font-semibold capitalize rounded-full w-fit">PRODUCT</div>
+            <div className="mt-2 text-zinc-600 text-3xl font-semibold">Beberapa Product Jemari <span className="text-orange-300">Semut</span></div>
+            <p className='text-justify mt-3 '>Berikut adalah sedikit contoh produk yang sudah kami buat dan memberikan feedback baik dari customer kami.</p>
+          </div>
+
+          {/* slider */}
+          <div className='hidden w-[65.666667%] lg:block'>
+            <div className='relative w-[100%] '>
+              <div className='flex flex-wrap w-[700px] absolute justify-center sliderEffect top-[-320px]'>
+                {
+                  dataTipe.map((item, index) =>
+                    <div key={index+item.name} className='flex bg-white shadow-sm shadow-black w-[305px] h-[305px] m-5 items-center justify-center flex-col rounded-[10px] exhibition' style={{margin: '0 10px 20px'}}>
+                      <div className='flex flex-col items-center text-customColor-biruTua text-center'>
+                        <Image className='w-[80%]' src={item.link} alt={item.name} />
+                      </div>
+                    </div>
+                  )
+                }
+                {
+                  dataTipe.map((item, index) =>
+                    <div key={index+item.name} className='flex bg-white shadow-sm shadow-black w-[305px] h-[305px] m-5 items-center justify-center flex-col rounded-[10px] exhibition' style={{margin: '0 10px 20px'}}>
+                      <div className='flex flex-col items-center text-customColor-biruTua text-center'>
+                        <Image className='w-[80%]' src={item.link} alt={item.name} />
+                      </div>
+                    </div>
+                  )
+                }
+              </div>
+            </div>
+          </div>
+
+          {/* when less width */}
+          <div className='lg:hidden sm:w-[80%] w-[100%] mb-[20px]'>
+            <div className='w-[100%] min-h-[360px] relative'>
+              <div className='flex flex-wrap md:justify-around sm:justify-center justify-center items-center'>
+                {
+                  dataTipe.map((item, index) =>
+                    <div key={index+item.name} className='flex bg-white shadow-sm shadow-black m-3 p-3 items-center justify-center flex-col rounded-[10px] exhibition'>
+                      <div className='flex flex-col items-center text-customColor-biruTua text-center'>
+                        <Image className='w-[90%]' src={item.link} alt={item.name} />
+                      </div>
+                    </div>
+                  )
+                }
+              </div>
+            </div>
+            </div>
+        </div>
+      </div>
+
       {/* section pricing */}
-      <div id="pricing" className="pt-[80px] pb-[80px] text-zinc-600 ">
+      <div id="pricing" className="pt-[80px] pb-[80px] text-zinc-600 bg-biru-100">
         <div className="max-w-4xl mt-[50px] m-auto">
           <div className="flex justify-center flex-col items-center">
             {/* title */}
@@ -176,7 +277,7 @@ export default function Home() {
             <div className="flex justify-center md:justify-start items-center flex-wrap">
               {
                 itemsScrapeFrame.map((res, index) => 
-                  <div key={index + 'scrapeframe'} className="relative bg-white shadow-sm shadow-black p-2 m-2 rounded-lg w-[90%] md:w-[280px] min-h-[350px] flex justify-between flex-col">
+                  <div key={index + 'scrapeframe'} className="relative bg-white shadow-sm shadow-black p-2 m-2 rounded-lg w-[90%] md:w-[280px] min-h-[430px] flex justify-between flex-col">
                     <div>
                       <div className="flex justify-center">
                         <Image width={400} height={400} src={res.image} alt={res.name}/>
@@ -198,7 +299,7 @@ export default function Home() {
                     </div>
 
                     {/* harga */}
-                    <div className="absolute top-0 right-0 bg-merah-200 px-1 rounded-tr-lg rounded-bl-lg text-white">Rp. {numberSeparator(res.price)}</div>
+                    <div className="absolute top-0 right-0 bg-red-700 px-1 rounded-tr-lg rounded-bl-lg text-white">Rp. {numberSeparator(res.price)}</div>
                   </div>
                 )
               }
@@ -244,19 +345,12 @@ export default function Home() {
                     </div>
 
                     {/* harga */}
-                    <div className="absolute top-0 right-0 bg-merah-200 px-1 rounded-tr-lg rounded-bl-lg text-white">Rp. {numberSeparator(res.price[0])} - {numberSeparator(res.price[res.price.length-1])}</div>
+                    <div className="absolute top-0 right-0 bg-red-700 px-1 rounded-tr-lg rounded-bl-lg text-white">Rp. {numberSeparator(res.price[0])} - {numberSeparator(res.price[res.price.length-1])}</div>
                   </div>
                 )
               }
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* section customers */}
-      <div id="customers" className="pt-[80px] pb-[80px] text-zinc-600 bg-merah-100">
-        <div className="max-w-4xl flex justify-center m-auto mt-[50px]">
-          customers
         </div>
       </div>
 
