@@ -7,6 +7,26 @@ import ParticlesComponent from "@/components/particles/particles";
 // icon
 import { HandClick, Tool, DeviceMobileMessage, Hearts } from 'tabler-icons-react';
 import Footer from "@/components/footer/footer";
+import Image from "next/image";
+import numberSeparator from "@/utils/numberSeparator";
+
+// item scrapeframe
+const itemsScrapeFrame = [
+  {
+    name: 'Desain By Template',
+    image: 'https://placehold.co/600x400.png',
+    price: 85000,
+    text: 'Pesan Scrapeframe dengan template yang sudah kami sediakan',
+    message: 'Hy Admin saya mau pesan scrapeframe dengan Desain Template'
+  },
+  {
+    name: 'Desain By Request',
+    image: 'https://placehold.co/600x400.png',
+    price: 100000,
+    text: 'Pesan Scrapeframe dengan desain custom',
+    message: 'Hy Admin saya mau pesan scrapeframe dengan Desain Request'
+  },
+]
 
 export default function Home() {
   return (
@@ -99,9 +119,42 @@ export default function Home() {
       </div>
 
       {/* section product */}
-      <div id="product" className="pt-[80px] pb-[80px] text-zinc-600 bg-hijau-100">
-        <div className="max-w-4xl flex justify-center m-auto mt-[50px]">
-          product
+      <div id="product" className="pt-[80px] pb-[80px] text-zinc-600 ">
+        <div className="max-w-4xl mt-[50px] m-auto">
+          <div className="flex justify-center flex-col items-center">
+            {/* title */}
+            <div className="px-3 py-2 bg-hijau-100 text-zinc-800 font-semibold rounded-full w-fit">PRODUCT</div>
+            <div className="mt-2 text-zinc-600 text-3xl font-semibold max-w-[600px] text-center">
+              Produk Scrapeframe dan Simple Art Jemari <span className="text-orange-300">Semut</span>
+            </div>
+          </div>
+
+          {/* scarepe frame */}
+          <div className="mt-4">
+            <div className="font-semibold text-lg ml-2">Scrapeframe :</div>
+
+            {/* card */}
+            <div className="flex justify-center md:justify-start items-center flex-wrap">
+              {
+                itemsScrapeFrame.map((res, index) => 
+                  <div key={index + 'scrapeframe'} className="relative bg-white shadow-sm shadow-black p-2 m-2 rounded-lg w-[90%] md:w-[280px] h-[350px] flex justify-between flex-col">
+                    <div>
+                      <Image width={400} height={400} src={res.image} alt={res.name}/>
+
+                      <div className="mt-1 font-semibold text-base">{res.name}</div>
+
+                      <div className="text-justify font-light">{res.text}</div>
+                    </div>
+
+                    <div className="bg-hijau-200 text-zinc-800 cursor-pointer px-2 py-1 my-2 w-fit rounded-lg">Pesan</div>
+
+                    {/* harga */}
+                    <div className="absolute top-0 right-0 bg-merah-200 px-1 rounded-tr-lg rounded-bl-lg text-white">Rp. {numberSeparator(res.price)}</div>
+                  </div>
+                )
+              }
+            </div>
+          </div>
         </div>
       </div>
 
