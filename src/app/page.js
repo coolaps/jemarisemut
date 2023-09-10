@@ -6,6 +6,7 @@ import ParticlesComponent from "@/components/particles/particles";
 
 // icon
 import { HandClick, Tool, DeviceMobileMessage, Hearts } from 'tabler-icons-react';
+import Footer from "@/components/footer/footer";
 
 export default function Home() {
   return (
@@ -97,7 +98,29 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-[1000px]"></div>
+      {/* section product */}
+      <div id="product" className="pt-[80px] pb-[80px] text-zinc-600 bg-hijau-100">
+        <div className="max-w-4xl flex justify-center m-auto mt-[50px]">
+          product
+        </div>
+      </div>
+
+      {/* section customers */}
+      <div id="customers" className="pt-[80px] pb-[80px] text-zinc-600 bg-merah-100">
+        <div className="max-w-4xl flex justify-center m-auto mt-[50px]">
+          customers
+        </div>
+      </div>
+
+      {/* section pricing */}
+      <div id="pricing" className="pt-[80px] pb-[80px] text-zinc-600 bg-ungu-100">
+        <div className="max-w-4xl flex justify-center m-auto mt-[50px]">
+          pricing
+        </div>
+      </div>
+
+      {/* footer */}
+      <Footer/>
 
       <ParticlesComponent/>
     </>
