@@ -187,13 +187,15 @@ export default function Home() {
                       <div className="text-justify font-light">{res.text}</div>
                     </div>
 
-                    <a 
-                      href={`https://wa.me/6281932622630?text=${res.message}`}
-                      target='_blank' 
-                      className="transition duration-300 ease-in-out bg-hijau-200 hover:bg-biru-100 text-zinc-800 cursor-pointer px-2 py-1 my-2 w-fit rounded-lg"
-                    >
-                      Pesan
-                    </a>
+                    <div className="flex justify-end">
+                      <a 
+                        href={`https://wa.me/6281932622630?text=${res.message}`}
+                        target='_blank' 
+                        className="transition duration-300 ease-in-out bg-hijau-200 hover:bg-biru-100 text-zinc-800 cursor-pointer px-2 py-1 my-2 w-fit rounded-lg"
+                      >
+                        Pesan
+                      </a>
+                    </div>
 
                     {/* harga */}
                     <div className="absolute top-0 right-0 bg-merah-200 px-1 rounded-tr-lg rounded-bl-lg text-white">Rp. {numberSeparator(res.price)}</div>
@@ -231,13 +233,15 @@ export default function Home() {
                       }
                     </div>
 
-                    <a 
-                      href={`https://wa.me/6281932622630?text=${res.message} ${res.name}`}
-                      target='_blank' 
-                      className="transition duration-300 ease-in-out bg-hijau-200 hover:bg-biru-100 text-zinc-800 cursor-pointer px-2 py-1 my-2 w-fit rounded-lg"
-                    >
-                      Pesan
-                    </a>
+                    <div className="flex justify-end">
+                      <a 
+                        href={`https://wa.me/6281932622630?text=${res.message} ${res.name}`}
+                        target='_blank' 
+                        className="transition duration-300 ease-in-out bg-hijau-200 hover:bg-biru-100 text-zinc-800 cursor-pointer px-2 py-1 my-2 w-fit rounded-lg"
+                      >
+                        Pesan
+                      </a>
+                    </div>
 
                     {/* harga */}
                     <div className="absolute top-0 right-0 bg-merah-200 px-1 rounded-tr-lg rounded-bl-lg text-white">Rp. {numberSeparator(res.price[0])} - {numberSeparator(res.price[res.price.length-1])}</div>
